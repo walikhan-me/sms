@@ -368,11 +368,29 @@
               <i class="bi bi-circle"></i><span>Inactive Student List</span>
             </a>
           </li>
-         
+
+        </ul>
+      </li>
       
-      
-      
-      
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Fee Management</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav2" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="student_managment/addstudent">
+              <i class="bi bi-circle"></i><span>Fee Voucher</span>
+            </a>
+          </li>
+          <li>
+            <a href="fee_management/fees/create_fee">
+              <i class="bi bi-circle"></i><span>Create fee</span>
+            </a>
+          </li>
+    
+
         </ul>
       </li>
       

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\schoolcontroller;
+use App\Http\Controllers\fee_management;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,3 +38,12 @@ Route::post('/edit_active_student',[schoolcontroller::class,'edit_active_student
 Route::get('/inactive_student/{id}',[schoolcontroller::class,'inactive_student']);
 Route::get('/student_managment/inactive_student_list',[schoolcontroller::class,'inactive_student_list']);
 Route::post('/inactive_student_',[schoolcontroller::class,'inactive_student_']);
+
+
+/////FEE MANAGEMENT////
+
+
+
+Route::get('/fee_management/fees/create_fee',[fee_management::class,'create_fee']);
+
+Route::post('/submitfee',[fee_management::class,'submitfee']);

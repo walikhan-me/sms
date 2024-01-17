@@ -51,6 +51,7 @@
         <div class="card">
             <div class="card-body">
               <h5 class="card-title">Default Table</h5>
+              
 
               <!-- Default Table -->
               <table class="table" id='dataappend' >
@@ -83,7 +84,7 @@
 
   </main>
 
-    </main>
+ 
 
     <script>
         $(document).ready(function() {
@@ -94,32 +95,14 @@
                 type: 'GET',
                 success: function(response) {
                     console.log(response)
-                    platetable(response);
+                    
                 },
               
               })
             }
           
           
-            function platetable( data){
-             
-              var tbody = $("#dataappend tbody");
-              $.each(data,function(index,post){
-                var row = "<tr>" +
-                                    '<td>' + post.id + '</td>' +
-                                    '<td>' + post.schoolname + '</td>' +
-                                    '<td>' + post.address + '</td>' +
-                                    '<td>' + post.contactnumber + '</td>' +
-                                    '<td>' + post.city_name + '</td>' +
-                                    '<td>' + post.province_name + '</td>' +
-                                    '<td>' + post.block + '</td>' +
-                                    '<td>' + post.ownername + '</td>' +
-                                    '<td>' + '<img src="' + '{{ asset("storage/school_logos/") }}' + '/' + post.schoollogo + '" height="50px"/>' + '</td>' +
-                                    '<td><a href="school/singleschool">Login</a></td>' +
-                                  '</tr>';
-                                  tbody.append(row)
-              })
-            }
+           
         
             })
     </script>

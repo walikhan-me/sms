@@ -27,3 +27,13 @@ Route::post('/items/store', [schoolcontroller::class, 'store']);
 Route::get('/get_data', [schoolcontroller::class, 'get_data']);
 
 Route::get('school/singleschool', [schoolcontroller::class, 'singleschool']);
+
+Route::get('student_managment/addstudent', [schoolcontroller::class, 'addstudent']);
+Route::post('add_student_db',[schoolcontroller::class,'add_student_db']);
+
+Route::get('student_managment/active_student_list', [schoolcontroller::class, 'active_student_list']);
+Route::get('/edit_student/{id}',[schoolcontroller::class,'edit_student']);
+Route::post('/edit_active_student',[schoolcontroller::class,'edit_active_student']);
+Route::get('/inactive_student/{id}',[schoolcontroller::class,'inactive_student']);
+Route::get('/student_managment/inactive_student_list',[schoolcontroller::class,'inactive_student_list']);
+Route::post('/inactive_student_',[schoolcontroller::class,'inactive_student_']);

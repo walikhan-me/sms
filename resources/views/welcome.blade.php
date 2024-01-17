@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <title>SMS</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -354,8 +354,18 @@
         </a>
         <ul id="components-nav1" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="">
+            <a href="student_managment/addstudent">
               <i class="bi bi-circle"></i><span>add student</span>
+            </a>
+          </li>
+          <li>
+            <a href="student_managment/active_student_list">
+              <i class="bi bi-circle"></i><span>Active Student List</span>
+            </a>
+          </li>
+          <li>
+            <a href="student_managment/inactive_student_list">
+              <i class="bi bi-circle"></i><span>Inactive Student List</span>
             </a>
           </li>
          
@@ -543,3 +553,8 @@
 </body>
 
 </html>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new simpleDatatables.DataTable('.datatable');
+  });
+</script>

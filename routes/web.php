@@ -44,6 +44,6 @@ Route::post('/inactive_student_',[schoolcontroller::class,'inactive_student_']);
 
 
 
-Route::get('/fee_management/fees/create_fee',[fee_management::class,'create_fee']);
+Route::get('/fee_management/fees/create_fee',[fee_management::class,'create_fee'])->name('create_fee');
 
 Route::post('/submitfee',[fee_management::class,'submitfee']);

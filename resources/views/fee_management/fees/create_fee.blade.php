@@ -70,7 +70,7 @@
                     </div>
 
                     <div class="form-check">
-                      <input class="form-check-input" name = 'yearly_fee' type="checkbox" id="yearly_fee">
+                      <input class="form-check-input" name = 'yearly_fee' type="checkbox" id="yearly_fee" >
                       <label class="form-check-label" for="gridCheck1">
                           Yearly fee
                       </label>

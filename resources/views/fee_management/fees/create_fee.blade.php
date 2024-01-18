@@ -56,21 +56,21 @@
             <input type="hidden" name="tution_fee" value="0">
                  <div class="col-md-12 offset-sm-12">
                     <div class="form-check">
-                      <input class="form-check-input" name = 'tution_fee' type="checkbox" id="tution_fee">
+                      <input class="form-check-input" name = 'tution_fee' type="checkbox" id="tution_fee" value='tution_fee'>
                       <label class="form-check-label" for="gridCheck1">
                         Tutuion fee
                       </label>
                     </div>
 
                     <div class="form-check">
-                      <input class="form-check-input" name = 'lab_fee' type="checkbox" id="lab_fee">
+                      <input class="form-check-input" name = 'lab_fee' type="checkbox" id="lab_fee" value='lab_fee'>
                       <label class="form-check-label" for="gridCheck1">
                          Lab fee
                       </label>
                     </div>
 
                     <div class="form-check">
-                      <input class="form-check-input" name = 'yearly_fee' type="checkbox" id="yearly_fee" >
+                      <input class="form-check-input" name = 'yearly_fee' type="checkbox" id="yearly_fee"  value='yearly_fee'>
                       <label class="form-check-label" for="gridCheck1">
                           Yearly fee
                       </label>

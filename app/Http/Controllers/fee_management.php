@@ -17,17 +17,17 @@ class fee_management extends Controller
             
         // ]);
 
-        $tution_fee =  $request->post('tution_fee')? 1 : 0;
-        $lab_fee =  $request->post('lab_fee')? 1 : 0;
-        $yearly_fee =  $request->post('yearly_fee')? 1 : 0;
+        $tution_fee =  $request->post('tution_fee')? 'tution_fee' : 0;
+        $lab_fee =  $request->post('lab_fee')? 'lab_fee' : 0;
+        $examinationfee =  $request->post('examinationfee')? 'examinationfee' : 0;
 
         $fee = new student_fee([
             'feetype'=>$request->post('fee_type'),
             'tutionfee'=>$tution_fee,
             'labfee'=>$lab_fee,
-            'yearly'=>$yearly_fee,
+            'examinationfee'=>$examinationfee,
             'status' => $request->input('activefee', 'active'),
-
+             'session'=> $request->post('session_')
 
         ]);
         $fee->save();

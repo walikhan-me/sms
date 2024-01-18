@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('student_fees', function (Blueprint $table) {
             $table->id();
             $table->string('feetype');
-            $table->decimal('tutionfee', 10, 2); // Assuming fees can be in decimal format
-            $table->decimal('labfee', 10, 2);
-            $table->decimal('examinationfee', 10, 2);
+            $table->string('tutionfee'); // Assuming fees can be in decimal format
+            $table->string('labfee');
+            $table->string('examinationfee');
             $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->string('session');
             $table->timestamps();
         });
     }

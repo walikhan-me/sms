@@ -52,6 +52,17 @@
                     <label for="schoollogo">Status</label>
                 </div>
             </div>
+          <div class="field">
+            <label class="label">Session</label>
+              <div class="control">
+                  <div class="select" >
+                    <select name='session_'>
+                      <option value='2023-2024'>2023-2024</option>
+                    
+                    </select>
+                  </div>
+              </div>
+          </div>
             <div class="col-md-12">
             <input type="hidden" name="tution_fee" value="0">
                  <div class="col-md-12 offset-sm-12">
@@ -70,9 +81,9 @@
                     </div>
 
                     <div class="form-check">
-                      <input class="form-check-input" name = 'yearly_fee' type="checkbox" id="yearly_fee"  value='yearly_fee'>
+                      <input class="form-check-input" name = 'examinationfee' type="checkbox" id="examinationfee"  value='examinationfee'>
                       <label class="form-check-label" for="gridCheck1">
-                          Yearly fee
+                      examination fee
                       </label>
                     </div>
                   </div>

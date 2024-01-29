@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('examinationfee');
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->string('session');
+            $table->string('fee_id_');
             $table->timestamps();
         });
     }

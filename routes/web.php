@@ -47,3 +47,10 @@ Route::post('/inactive_student_',[schoolcontroller::class,'inactive_student_']);
 Route::get('/fee_management/fees/create_fee',[fee_management::class,'create_fee'])->name('create_fee');
 
 Route::post('/submitfee',[fee_management::class,'submitfee']);
+Route::get('/fee_management/fees/view_fee',[fee_management::class,'view_fee']);
+// fee_management/fee_voucher/single_fee_voucher
+Route::get('fee_management/fee_voucher/single_fee_voucher',[fee_management::class,'single_fee_voucher']);
+
+Route::post('/create_single_voucher',[fee_management::class,'create_single_voucher']);
+// generate single fee voucher
+Route::get('/fee_management/fee_voucher/generate_voucher',[fee_management::class,'generate_voucher'])->name('generate_voucher');

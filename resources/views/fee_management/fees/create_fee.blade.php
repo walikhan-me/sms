@@ -86,6 +86,20 @@
                       examination fee
                       </label>
                     </div>
+
+
+
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                          <select class="form-select" id="fee_id_" aria-label="province" name="fee_id_">
+                          <option selected>Fee id</option>
+                            <option value="1">tutionfee</option>
+                            <option value="2">labfee</option>
+                            <option value="3">examinationfee</option>
+                          </select>
+                          <label for="floatingSelect">Fee id</label>
+                        </div>
+                      </div>
                   </div>
 
 

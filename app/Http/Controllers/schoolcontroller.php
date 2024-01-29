@@ -119,6 +119,7 @@ class schoolcontroller extends Controller
           $data->status  = $request->active;
           $randomSid = $this->generateRandomSid();
           $data->sid = $randomSid;
+          $data->fee_id_ = $request->fee_id_;
           $data->save();
           return response()->json(['success' => 'Item added successfully.']);
       }

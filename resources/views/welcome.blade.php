@@ -374,28 +374,63 @@
       
 
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Fee Management</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav2" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="student_managment/addstudent">
-              <i class="bi bi-circle"></i><span>Fee Voucher</span>
-            </a>
-          </li>
-          <li>
-            <a href="fee_management/fees/create_fee">
-              <i class="bi bi-circle"></i><span>Create fee</span>
-            </a>
-          </li>
-    
+<li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i><span>Fee Management</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
 
-        </ul>
-      </li>
-      
-      
-      
+    <ul id="components-nav2" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <li>
+            <a class="nav-link collapsed" data-bs-target="#fee_management" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-menu-button-wide"></i><span>Fees</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="fee_management" class="nav-content collapse">
+                <li>
+                    <a href="fee_management/fees/create_fee">
+                        <i class="bi bi-circle"></i><span>Create Fee</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fee_management/fees/view_fee">
+                        <i class="bi bi-circle"></i><span>View Fee</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+
+        <li>
+            <a class="nav-link collapsed" data-bs-target="#fee_vouchers_m" data-bs-toggle="collapse" href="#fee_vouchers_m">
+                <i class="bi bi-menu-button-wide"></i><span>Fee Voucher</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="fee_vouchers_m" class="nav-content collapse">
+                <li>
+                    <a href="fee_management/fee_voucher/generate_voucher">
+                        <i class="bi bi-circle"></i><span>Generate Voucher</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fee_management/fee_voucher/single_fee_voucher">
+                        <i class="bi bi-circle"></i><span>Single Fee Voucher</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fee_management/fee_voucher/view_fee">
+                        <i class="bi bi-circle"></i><span>Charge Date</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fee_management/fee_voucher/view_fee">
+                        <i class="bi bi-circle"></i><span>Fee Posting</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+       
+    </ul>
+</li>
+
       <!-- End Components Nav -->
 
       <li class="nav-item">

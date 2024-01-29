@@ -20,9 +20,11 @@ return new class extends Migration
             $table->string('section');
             $table->string('sid')->unique()->nullable(); // Unique for the entire school
             $table->string('father_name');
+            
             $table->string('fathercnic');
             $table->string('mobile_number');
             $table->string('status');
+            $table->string('fee_id_');
             $table->timestamps();
         });
     }

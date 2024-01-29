@@ -15,4 +15,9 @@ class addstudent extends Model
         'mobile_number',
         'status',
     ];
+    public function student_fees()
+    {
+        return $this->hasMany(student_fees::class, 'id', 'sid');
+    }
+   
 }

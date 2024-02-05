@@ -27,38 +27,29 @@
 
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Add School</h5>
+          <h5 class="card-title">Generate single voucher</h5>
 
           <!-- Floating Labels Form -->
-          <form class="row g-3" enctype="multipart/form-data" id='itemForm'>
+          <form class="row g-3" enctype="multipart/form-data" id='itemForm' method="post" action="/print_single_voucher">
             @csrf
 
             <div class="col-md-6">
               <div class="form-floating mb-3">
                 <select class="form-select" id="sid" aria-label="section" name="sid">
-                  @foreach ($students as $student)
-                    <option value="{{ $student->sid }}" >{{ $student->sid }}</option>
-                  @endforeach
-                
+                @foreach ($students_data as $student)
+                    <option value="{{ $student->sid }}">{{ $student->student_name }} - {{ $student->class }}</option>
+                @endforeach
+                        
                 </select>
-                <label for="floatingSelect">class</label>
+                <label for="floatingSelect">sid</label>
               </div>
             </div>
-           <div class="col-md-6">
-              <div class="form-floating mb-3">
-                <select class="form-select" id="section" aria-label="province" name="section">
-                <option selected>section</option>
-                  <option value="1">section</option>
-                
-                </select>
-                <label for="floatingSelect">section</label>
-              </div>
-            </div>
+         
            
             <div class="col-md-6">
               <div class="form-floating mb-3">
                 <select class="form-select" id="student_name" aria-label="province" name="student_name">
-                @foreach ($students as $student)
+                @foreach ($students_data as $student)
                    <option value="{{ $student->student_name }}" >{{ $student->student_name }}</option>
                 @endforeach
                 <label for="floatingSelect">Student Name</label>
@@ -67,7 +58,7 @@
             <div class="col-md-6">
               <div class="form-floating mb-3">
                 <select class="form-select" id="class" aria-label="province" name="class">
-                  @foreach ($students as $student)
+                  @foreach ($students_data as $student)
                     <option value="{{ $student->class }}" >{{ $student->class }}</option>
                   @endforeach
                 
@@ -81,7 +72,7 @@
             <div class="col-md-6">
               <div class="form-floating mb-3">
                 <select class="form-select" id="section" aria-label="section" name="section">
-                  @foreach ($students as $student)
+                  @foreach ($students_data as $student)
                     <option value="{{ $student->section }}" >{{ $student->section }}</option>
                   @endforeach
                 
@@ -93,7 +84,7 @@
             <div class="col-md-6">
               <div class="form-floating mb-3">
                 <select class="form-select" id="father_name" aria-label="section" name="father_name">
-                  @foreach ($students as $student)
+                  @foreach ($students_data as $student)
                     <option value="{{ $student->father_name }}" >{{ $student->father_name }}</option>
                   @endforeach
                 
@@ -101,17 +92,24 @@
                 <label for="floatingSelect">Father name</label>
               </div>
             </div>
-            <!-- <div class="col-md-6">
+            <div class="col-md-6">
               <div class="form-floating mb-3">
-                <select class="form-select" id="father_name" aria-label="section" name="father_name">
-                  @foreach ($students as $student)
-                    <option value="{{ $student->voucher_type }}" >{{ $student->voucher_type }}</option>
-                  @endforeach
+                  <input type="number" class="form-control" id="amount" name="amount">
+                  <label for="amount">Amount</label>
+              </div>
+           </div>
+            
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <select class="form-select" id="feetype" aria-label="section" name="feetype">
+                
+                    <option value="regular_voucher" >Regular Voucher</option>
+                
                 
                 </select>
-                <label for="floatingSelect">voucher type</label>
+                <label for="floatingSelect">fee type</label>
               </div>
-            </div> -->
+            </div>
             <div class="col-md-6">
               <div class="form-floating mb-3">
                   <input type="date" class="form-control" id="expiry_date" name="expiry_date">

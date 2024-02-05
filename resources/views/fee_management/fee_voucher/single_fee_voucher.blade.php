@@ -26,7 +26,7 @@
 
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Add School</h5>
+          <h5 class="card-title">Single Student Fee voucher</h5>
 
           <!-- Floating Labels Form --> 
           <form class="row g-3" enctype="multipart/form-data"  method='POST' id='itemForm' action='/create_single_voucher'>

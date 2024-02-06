@@ -6,6 +6,7 @@ use App\Models\addstudent;
 use App\Models\voucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use PDF;
 
 class fee_management extends Controller
@@ -51,25 +52,27 @@ class fee_management extends Controller
     }
     public function create_single_voucher(Request $request)
     {
+
+      
        
         $request->validate([
-            'sid' => 'required',
+            'student_cid' => 'required',
         ]);
     
       
         $student_data = DB::table('addstudents')
             ->join('student_fees', 'addstudents.fee_id_', '=', 'student_fees.fee_id_')
-            ->select('addstudents.sid', 'addstudents.student_name', 'addstudents.father_name', 'addstudents.class', 'addstudents.section', 'student_fees.feetype', 'student_fees.tutionfee', 'student_fees.labfee', 'student_fees.examinationfee')
+            ->select('addstudents.sid', 'addstudents.student_name', 'addstudents.father_name', 'addstudents.class', 'addstudents.section','student_fees.feetype', 'student_fees.tutionfee', 'student_fees.labfee', 'student_fees.examinationfee')
             ->where('addstudents.status', '=', 'active')
-            ->where('addstudents.sid', '=', $request->sid)
+            ->where('addstudents.sid', '=', $request->student_cid)
             ->first(); 
     
             if ($student_data) {
-                return view('fee_management/fee_voucher.create_single_voucher')->with('error', 'No student found with the given SID.');
-
+                return view('fee_management/fee_voucher.generate_voucher', compact('student_data'));
             } else {
-                // Return the create_single_voucher view with an error message
-                return view('/fee_management/fee_voucher/create_single_voucher')->with('error', 'No student found with the given SID.');
+                return view('/fee_management/fee_voucher/create_single_voucher')
+                    ->with('error', 'No student found with the given SID.')
+                    ->withInput();
             }
     }
     
@@ -84,32 +87,38 @@ class fee_management extends Controller
     }
 
     public function print_single_voucher(Request $request){
-        $request->validate([
+
+        
+      $var =   $request->validate([
             'sid' => 'required',
             'student_name' => 'required',
-            'class' => 'required',
+            // 'class' => 'required',
             'section' => 'required',
             'father_name' => 'required',
+            // 'voucher_type' =>'required',
             'amount' => 'required',
             'feetype' => 'required',
             'expiry_date' => 'required|date',
             'date_issued' => 'required|date',
         ]);
-        $voucherNumber = Str::uuid()->toString();
-
+        print_r($request->post('class'));
+        die();
+        $voucher_id = rand(1000,9999);
         $data_voucher_in_db = voucher::create([
+            'voucher_id'=> $voucher_id,
             'student_name'=>$request->post('student_name'),
             'class'=>$request->post('class'),
             'section'=>$request->post('section'),
             'sid'=>$request->post('sid'),
             'father_name'=>$request->post('father_name'),
-            'voucher_number	'=> $voucherNumber,
+            'voucher_type' => $request->post('voucher_type'),
+            'voucher_number	'=> Str::uuid()->toString(),
             'amount'=>$request->post('amount'),
             'expiry_date'=>$request->post('expiry_date'),
             'date_issued'=>$request->post('date_issued'),
             'status'=>'active',
         ]);
-
+       
         $data =  $request->all();
         $pdf = PDF::loadView('voucher',compact('data'));
         // Save or return the PDF

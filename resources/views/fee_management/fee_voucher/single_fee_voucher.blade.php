@@ -33,10 +33,11 @@
             @csrf
             <div class="col-md-12">
               <div class="form-floating">
-                <input type="text" class="form-control" id="student_cid" name="student_cid" placeholder="Student Cid">
+                <input type="text" class="form-control" id="student_cid" name="student_cid" placeholder="Student Cid" value="{{ old('student_cid') }}">
                 <label for="floatingName">Student Cid</label>
               </div>
             </div>
+          
    
             <!-- <img id="imagePreview" src="#" alt="Image Preview" style="display: none; max-width: 100%; margin-top: 10px;" > -->
             <div class="text-center">
@@ -47,6 +48,8 @@
             
           </form><!-- End floating Labels Form -->
 
+        
+       
         </div>
       </div>
 

@@ -1,4 +1,6 @@
 
+
+
 @extends('welcome')
 @section('styles')
 
@@ -36,60 +38,94 @@
             <div class="col-md-6">
               <div class="form-floating mb-3">
                 <select class="form-select" id="sid" aria-label="section" name="sid">
-                @foreach ($students_data as $student)
-                    <option value="{{ $student->sid }}">{{ $student->student_name }} - {{ $student->class }}</option>
-                @endforeach
-                        
+                @if(isset($student_data))
+                   <option value="{{$student_data->sid}}">{{$student_data->sid}}</option>
+                @else  
+                <p>No student data found</p>
+                 @endif      
                 </select>
                 <label for="floatingSelect">sid</label>
               </div>
             </div>
-         
+         <?php
+        
+         ?>
            
             <div class="col-md-6">
               <div class="form-floating mb-3">
                 <select class="form-select" id="student_name" aria-label="province" name="student_name">
-                @foreach ($students_data as $student)
-                   <option value="{{ $student->student_name }}" >{{ $student->student_name }}</option>
-                @endforeach
+                  @if(isset($student_data))
+                    <option value="{{$student_data->student_name}}">{{$student_data->student_name}}</option>
+                  @else  
+                  <p>No student data found</p>
+                  @endif  
                 <label for="floatingSelect">Student Name</label>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-floating mb-3">
                 <select class="form-select" id="class" aria-label="province" name="class">
-                  @foreach ($students_data as $student)
-                    <option value="{{ $student->class }}" >{{ $student->class }}</option>
-                  @endforeach
-                
+                  @if(isset($student_data))
+                      <option value="{{$student_data->class}}">{{$student_data->class}}</option>
+                    @else  
+                    <p>No student data found</p>
+                    @endif  
+                  
                 </select>
                 <label for="floatingSelect">class</label>
               </div>
             </div>
 
-           
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <select class="form-select" id="class" aria-label="province" name="class">
+                  @if(isset($student_data))
+                      <option value="{{$student_data->class}}">{{$student_data->class}}</option>
+                    @else  
+                    <p>No student data found</p>
+                    @endif  
+                  
+                </select>
+                <label for="floatingSelect">class</label>
+              </div>
+            </div>
+
 
             <div class="col-md-6">
               <div class="form-floating mb-3">
                 <select class="form-select" id="section" aria-label="section" name="section">
-                  @foreach ($students_data as $student)
-                    <option value="{{ $student->section }}" >{{ $student->section }}</option>
-                  @endforeach
+                    @if(isset($student_data))
+                      <option value="{{$student_data->section}}">{{$student_data->section}}</option>
+                    @else  
+                    <p>No student data found</p>
+                    @endif  
+                  
                 
                 </select>
-                <label for="floatingSelect">class</label>
+                <label for="floatingSelect">section</label>
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="form-floating mb-3">
                 <select class="form-select" id="father_name" aria-label="section" name="father_name">
-                  @foreach ($students_data as $student)
-                    <option value="{{ $student->father_name }}" >{{ $student->father_name }}</option>
-                  @endforeach
+                     @if(isset($student_data))
+                      <option value="{{$student_data->father_name}}">{{$student_data->father_name}}</option>
+                    @else  
+                    <p>No student data found</p>
+                    @endif  
+                  
                 
                 </select>
                 <label for="floatingSelect">Father name</label>
+              </div>
+              <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <select class="form-select" id="father_name" aria-label="section" name="father_name">
+                    <option value="regular_voucher">Regular Voucher</option>
+                
+                </select>
+                <label for="floatingSelect">Voucher Type</label>
               </div>
             </div>
             <div class="col-md-6">
@@ -103,7 +139,12 @@
               <div class="form-floating mb-3">
                 <select class="form-select" id="feetype" aria-label="section" name="feetype">
                 
-                    <option value="regular_voucher" >Regular Voucher</option>
+                    @if(isset($student_data))
+                      <option value="{{$student_data->feetype}}">{{$student_data->feetype}}</option>
+                    @else  
+                    <p>No student data found</p>
+                    @endif  
+                  
                 
                 
                 </select>

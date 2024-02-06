@@ -22,13 +22,13 @@ return new class extends Migration
             $table->string('sid');
             $table->string('father_name');
             $table->string('voucher_type');
-            $table->string('voucher_number');
+            $table->string('voucher_number')->default('default_value');
             $table->string('amount');
             $table->date('expiry_date')->nullable();  // Nullable because the ExpiryDate is optional
             $table->date('date_issued')->nullable();
             $table->string('status');
             $table->timestamps();
-            $table->unique(['id', 'voucher_id']);  //for unique id and vpucher id
+           
         });
     }
 

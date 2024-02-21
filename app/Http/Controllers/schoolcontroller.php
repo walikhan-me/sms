@@ -204,7 +204,7 @@ public function edit_student($id){
         $inactiveStudents = inactivestudent::inactive()->get();
 
         // Pass the data to the view
-        return view('student_managment.inactive_student_list', ['inactiveStudents' => $inactiveStudents]);
+        return view('student_managment.inactive_student_list', ['inactiveStudent' => $inactiveStudents]);
       }
   
 }

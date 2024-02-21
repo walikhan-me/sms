@@ -25,14 +25,12 @@
 
     <div class="col-lg-12">
 
-      
-
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Generate single voucher</h5>
+          <h5 class="card-title">View Fee Posting Form</h5>
 
           <!-- Floating Labels Form -->
-          <form class="row g-3" enctype="multipart/form-data" id='itemForm' method="post" action="/print_single_voucher">
+          <form class="row g-3" enctype="multipart/form-data" id='itemForm' method="post" action="/submit_student_fee">
             @csrf
 
             <div class="col-md-6">
@@ -47,48 +45,39 @@
                 <label for="floatingSelect">sid</label>
               </div>
             </div>
-         <?php
-        
-         ?>
-           
-            <div class="col-md-6">
-              <div class="form-floating mb-3">
-                <select class="form-select" id="student_name" aria-label="province" name="student_name">
-                  @if(isset($student_data))
-                    <option value="{{$student_data->student_name}}">{{$student_data->student_name}}</option>
-                  @else  
-                  <p>No student data found</p>
-                  @endif  
-                <label for="floatingSelect">Student Name</label>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-floating mb-3">
-                <select class="form-select" id="class" aria-label="province" name="class">
-                  @if(isset($student_data))
-                      <option value="{{$student_data->class}}">{{$student_data->class}}</option>
-                    @else  
-                    <p>No student data found</p>
-                    @endif  
-                  
-                </select>
-                <label for="floatingSelect">class</label>
-              </div>
-            </div>
+    
 
             <div class="col-md-6">
               <div class="form-floating mb-3">
-                <select class="form-select" id="class" aria-label="province" name="class">
-                  @if(isset($student_data))
+                <select class="form-select" id="student_name" aria-label="student_name" name="student_name">
+                    @if(isset($student_data))
+                      <option value="{{$student_data->student_name}}">{{$student_data->student_name}}</option>
+                    @else  
+                    <p>No student data found</p>
+                    @endif  
+                  
+                
+                </select>
+                <label for="floatingSelect">section</label>
+              </div>
+            </div>
+            
+          
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <select class="form-select" id="class" aria-label="class" name="class">
+                    @if(isset($student_data))
                       <option value="{{$student_data->class}}">{{$student_data->class}}</option>
                     @else  
                     <p>No student data found</p>
                     @endif  
                   
+                
                 </select>
                 <label for="floatingSelect">class</label>
               </div>
             </div>
+          
 
 
             <div class="col-md-6">
@@ -121,29 +110,15 @@
               </div>
              
             </div>
-            <div class="col-md-6">
-              <div class="form-floating mb-3">
-                <select class="form-select" id="voucher_type" aria-label="section" name="voucher_type">
-                   
-                   <option value="regular_voucher">Regular Vouchers</option>
-                </select>
-                <label for="floatingSelect">Father name</label>
-              </div>
-             
-            </div>
-            <div class="col-md-6">
-              <div class="form-floating mb-3">
-                  <input type="number" class="form-control" id="amount" name="amount">
-                  <label for="amount">Amount</label>
-              </div>
-           </div>
+           
+           
             
             <div class="col-md-6">
               <div class="form-floating mb-3">
-                <select class="form-select" id="feetype" aria-label="section" name="feetype">
+                <select class="form-select" id="voucher_type" aria-label="section" name="voucher_type">
                 
                     @if(isset($student_data))
-                      <option value="{{$student_data->feetype}}">{{$student_data->feetype}}</option>
+                      <option value="{{$student_data->voucher_type}}">{{$student_data->voucher_type}}</option>
                     @else  
                     <p>No student data found</p>
                     @endif  
@@ -151,7 +126,7 @@
                 
                 
                 </select>
-                <label for="floatingSelect">fee type</label>
+                <label for="floatingSelect">Voucher type</label>
               </div>
             </div>
 
@@ -160,13 +135,10 @@
                 <select class="form-select" id="expiry_date" name="expiry_date">
                 
                     @if(isset($student_data))
-                      <option value="{{$student_data->posting_date}}">{{$student_data->posting_date}}</option>
+                      <option value="{{$student_data->expiry_date}}">{{$student_data->expiry_date}}</option>
                     @else  
                     <p>No student data found</p>
                     @endif  
-                  
-                
-                
                 </select>
                 <label for="floatingSelect">Posting Date</label>
               </div>
@@ -177,7 +149,7 @@
                 <select class="form-select" id="date_issued" name="date_issued">
                 
                     @if(isset($student_data))
-                      <option value="{{$student_data->charge_date}}">{{$student_data->charge_date}}</option>
+                      <option value="{{$student_data->date_issued}}">{{$student_data->date_issued}}</option>
                     @else  
                     <p>No student data found</p>
                     @endif  
@@ -188,6 +160,62 @@
                 <label for="floatingSelect">Charge Date</label>
               </div>
             </div>
+
+
+            
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <select class="form-select" id="amount" name="amount">
+                
+                    @if(isset($student_data))
+                      <option value="{{$student_data->amount}}">{{$student_data->amount}}</option>
+                    @else  
+                    <p>No student data found</p>
+                    @endif  
+                  
+                
+                
+                </select>
+                <label for="floatingSelect">Amount</label>
+              </div>
+            </div>
+
+
+            
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <select class="form-select" id="status" name="status">
+                
+                    @if(isset($student_data))
+                      <option value="{{$student_data->status}}">{{$student_data->status}}</option>
+                    @else  
+                    <p>No student data found</p>
+                    @endif  
+                  
+                
+                
+                </select>
+                <label for="floatingSelect">Status</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <select class="form-select" id="voucher_id" name="voucher_id">
+                
+                    @if(isset($student_data))
+                      <option value="{{$student_data->voucher_id}}">{{$student_data->voucher_id}}</option>
+                    @else  
+                    <p>No student data found</p>
+                    @endif  
+                  
+                
+                
+                </select>
+                <label for="floatingSelect">Voucher Id</label>
+              </div>
+            </div>
+          
             
             
             <!-- <img id="imagePreview" src="#" alt="Image Preview" style="display: none; max-width: 100%; margin-top: 10px;" > -->

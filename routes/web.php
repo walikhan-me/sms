@@ -55,3 +55,21 @@ Route::post('/create_single_voucher',[fee_management::class,'create_single_vouch
 
 Route::get('/fee_management/fee_voucher/generate_voucher',[fee_management::class,'generate_voucher'])->name('generate_voucher');
 Route::post('/print_single_voucher', [fee_management::class, 'print_single_voucher'])->name("print_single_voucher");
+
+Route::get('/fee_management/fee_voucher/voucher',[fee_management::class,'voucher'])->name('voucher');
+
+Route::get('/fee_management/fee_voucher/charge_date',[fee_management::class,'charge_date'])->name('charge_date');
+Route::post('/post_charge_date',[fee_management::class,'post_charge_date'])->name('post_charge_date');
+
+Route::get('/fee_management/fee_voucher/fee_posting',[fee_management::class,'fee_posting'])->name('fee_posting');
+Route::post('/view_fee_posting_form',[fee_management::class,'view_fee_posting_form'])->name('view_fee_posting_form');
+Route::post('/fee_posting_form',[fee_management::class,'fee_posting_form'])->name('fee_posting_form');
+
+
+Route::get('/fee_management/fee_voucher/view_fee_posting_form',[fee_management::class,'view_fee_posting_form'])->name('view_fee_posting_form');
+
+Route::post('/submit_student_fee',[fee_management::class,'submit_student_fee'])->name('submit_student_fee');
+
+
+// active voucher
+Route::get('fee_management/voucher/active_vouchers', [fee_management::class, 'active_vouchers'])->name('active_vouchers');

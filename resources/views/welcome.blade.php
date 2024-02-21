@@ -405,28 +405,76 @@
                 <i class="bi bi-menu-button-wide"></i><span>Fee Voucher</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="fee_vouchers_m" class="nav-content collapse">
-                <li>
-                    <a href="fee_management/fee_voucher/generate_voucher">
-                        <i class="bi bi-circle"></i><span>Generate Voucher</span>
+                 <li>
+                    <a href="fee_management/fee_voucher/charge_date">
+                        <i class="bi bi-circle"></i><span>Charge Date</span>
                     </a>
                 </li>
+              
                 <li>
                     <a href="fee_management/fee_voucher/single_fee_voucher">
                         <i class="bi bi-circle"></i><span>Single Fee Voucher</span>
                     </a>
                 </li>
+            
+             
                 <li>
-                    <a href="fee_management/fee_voucher/view_fee">
-                        <i class="bi bi-circle"></i><span>Charge Date</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="fee_management/fee_voucher/view_fee">
+                    <a href="fee_management/fee_voucher/fee_posting">
                         <i class="bi bi-circle"></i><span>Fee Posting</span>
                     </a>
                 </li>
             </ul>
         </li>
+
+        <li>
+            <a class="nav-link collapsed" data-bs-target="#vouchers_m" data-bs-toggle="collapse" href="#vouchers_m">
+                <i class="bi bi-menu-button-wide"></i><span>Vouchers</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+        </li>
+        <li>
+           
+            <ul id="vouchers_m" class="nav-content collapse">
+                 <li>
+                    <a href="fee_management/voucher/active_vouchers">
+                        <i class="bi bi-circle"></i><span>Active Vouchers</span>
+                    </a>
+                </li>
+              
+                
+            </ul>
+        </li>
+       
+    </ul>
+</li>
+
+
+<li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#components-nav3" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i><span>Fee Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+
+    <ul id="components-nav3" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+    
+
+
+
+        <li>
+            <a class="nav-link collapsed" data-bs-target="#fee_report" data-bs-toggle="collapse" href="#fee_report">
+                <i class="bi bi-menu-button-wide"></i><span>Fee Report</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="fee_report" class="nav-content collapse">
+                 <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Fee Report</span>
+                    </a>
+                </li>
+              
+              
+            </ul>
+        </li>
+
+       
+       
        
     </ul>
 </li>
